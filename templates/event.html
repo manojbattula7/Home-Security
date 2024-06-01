@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder Contents</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .scrollable-list {
+            max-height: 200px; /* Adjust maximum height as needed */
+            overflow-y: scroll; /* Enable vertical scrollbar */
+        }
+        body {
+            background-color:aquamarine; /* Set your desired background color */
+            background-image:linear-gradient(to right,#60ECBD,#3681b6);
+        }
+        .container{
+            margin-top: 70px;
+        }
+        button {
+            background-color: #022a03;
+            color: #191818;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #6bbdb0;
+        }
+        .folder {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .subfile {
+            margin-left: 20px;
+            color: #888;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content">
+                    <h2>Video</h2>
+                    <ul class="list-group scrollable-list" id="videoFiles">
+                        {% for video in folder1_contents %}
+                            <li class="list-group-item"><a href="{{ url_for('video_view', filename=video) }}">{{ video }}</a></li>
+                        {% endfor %}
+                        <!-- Add folders and sub-files here with the same styling -->
+                        {% for folder in folder1_folders %}
+                            <li class="list-group-item folder">{{ folder }}</li>
+                            {% for subfile in folder1_subfiles[folder] %}
+                                <li class="list-group-item subfile" style="display: none;"><a href="{{ url_for('subfile_view', foldername=folder, filename=subfile) }}">{{ subfile }}</a></li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="content">
+                    <h2>CSV Files</h2>
+                    <ul class="list-group scrollable-list">
+                        {% for csv_file in folder2_contents %}
+                            <li class="list-group-item"><a href="{{ url_for('csv_view', filename=csv_file) }}">{{ csv_file }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+    <center><a href="/dashboard"><button style="background-color: rgb(163, 210, 117);size: 50px;"><b>Back</b></button></a></center>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const folders = document.querySelectorAll('.folder');
+            folders.forEach(folder => {
+                folder.addEventListener('click', function() {
+                    const subfiles = this.nextElementSibling.querySelectorAll('.subfile');
+                    subfiles.forEach(subfile => {
+                        subfile.style.display = (subfile.style.display === 'none') ? 'block' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

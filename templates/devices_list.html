@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device List</title>
+    <style>
+        body {
+            background-image: url('/static/s6.jpg');
+            background-repeat: no-repeat;
+            /* background-position: 5%; */
+            background-size: cover; /* Ensure the background image covers the entire background */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-image: linear-gradient(to right, #60ECBD, #3681b6);
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        td button:hover {
+            background-color: #d32f2f;
+        }
+
+        button {
+            background-color: #022a03;
+            color: #191818;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #6bbdb0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ddd;">Device List</h1>
+    <a href="/devices_add"><button style="background-color: rgb(47, 255, 213);">Add Device</button></a><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Room Name</th>
+                <th>Device Name</th>
+                <th>Device Address</th>
+                <th>Port Number</th>
+                <th>Channel</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in devices %}
+            <tr>
+                <td>{{ device[1] }}</td>
+                <td>{{ device[2] }}</td>
+                <td>{{ device[3] }}</td>
+                <td>{{ device[4] }}</td>
+                <td>{{ device[5] }}</td>
+                <td>
+                    <form action="/delete_device/{{ device[0] }}" method="post" onsubmit="return confirm('Are you sure you want to delete this device?');">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table><br>
+    <center><a href="/dashboard"><button style="background-color: rgb(47, 255, 213);size: 50px;">Back</button></a></center>
+</body>
+</html>

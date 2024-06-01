@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image:url('/static/s5.jpg');
+            background-repeat: no-repeat;
+            background-position: 2%;
+            background-size: cover;
+        }
+
+        .login-container {
+            width: 400px; /* Adjust the width as needed */
+            height: 34  0px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-left: -550px; /* Move container to the left side of the page */
+            background-image:linear-gradient(to left,#051937,#60ECBD);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #022a03;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #6cc7b8;
+        }
+
+        .social-login {
+            margin-top: 20px;
+        }
+
+        .social-login a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color:bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+            <input type="email" placeholder="Email ID" name="email" required>
+            <input type="text" placeholder="Name" name="name">
+            <input type="tel" placeholder="Phone Number" name="phone" required>
+            <input type="text" placeholder="Address" name="address">
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Signup</button>
+        </form>
+
+    </div>
+</body>
+</html>

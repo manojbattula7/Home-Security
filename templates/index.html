@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('static/5072616.jpg');
+            background-repeat: no-repeat;
+            background-position: 2%;
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+        }
+       
+
+        .login-button,
+        .logout-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        /*.logout-button {
+            display: none;
+        }*/
+    </style>
+</head>
+
+<body>
+    <h2 style="color: antiquewhite;">Welcome to CV Web Page</h2><br>
+    <div class="container">
+        <button class="login-button" onclick="redirectToLoginPage()">Login</button>
+        <button class="login-button" onclick="redirectToSignupPage()">Signup</button>
+    </div>
+
+    <script>
+        function redirectToLoginPage() {
+            // Change the URL to your login page
+            window.location.href = '/login';
+        }
+        function redirectToSignupPage() {
+            // Change the URL to your login page
+            window.location.href = '/signup';
+        }
+
+    
+    </script>
+</body>
+
+</html>

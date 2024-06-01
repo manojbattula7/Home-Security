@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            text-align: center;
+            background-image:linear-gradient(to right,#051937,#60ECBD,#007D56);
+
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+        .image-container a {
+            display: inline-block;
+            margin: 60px; /* Adjust as needed */
+            text-decoration: none;
+            color: black;
+        }
+        .image-container img {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            object-fit: cover;
+        }
+        .image-container span {
+            display: block;
+            font-style: oblique;
+            font-size: 25px;
+            margin-top: 5px; /* Adjust as needed */
+        }
+        .span{
+            font-style: oblique;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div class="image-container">
+        <a href="/devices_list">
+            <img src="/static/devices.jpg" alt="Devices">
+            <span>Devices</span>
+        </a>
+        <a href="/camera_view">
+            <img src="/static/view.jpg" alt="View">
+            <span>View</span>
+        </a>
+        <a href="/event">
+            <img src="/static/event.png" alt="Events">
+            <span>Events</span>
+        </a>
+        <a href="/settings">
+            <img src="/static/settings.jpg" alt="Settings">
+            <span>Settings</span>
+        </a>
+    </div>
+</body>
+</html>
