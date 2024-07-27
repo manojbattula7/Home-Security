@@ -20,4 +20,4 @@ Developed a sophisticated home security system using YOLO, OpenCV, and Flask. Th
 
 ## System Architecture
 
-![System Architecture](SystemArichitecture.png)
+![Architecture](https://github.com/user-attachments/assets/39e4ca91-be51-40ac-a8d0-bb88fbaedd50)
