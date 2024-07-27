@@ -21,3 +21,14 @@ Developed a sophisticated home security system using YOLO, OpenCV, and Flask. Th
 ## System Architecture
 
 ![Architecture](https://github.com/user-attachments/assets/39e4ca91-be51-40ac-a8d0-bb88fbaedd50)
+
+## Features
+
+- Real-time video processing using OpenCV.
+- Fire detection using YOLO model.
+- Unauthorized person detection with face recognition module.
+- Audible alerts for immediate threat notifications.
+- Detailed logging of events with date, time, and captured frames/images.
+- User-friendly web interface with Flask for remote monitoring and management.
+
+
