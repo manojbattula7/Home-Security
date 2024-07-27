@@ -69,6 +69,25 @@ Developed a sophisticated home security system using YOLO, OpenCV, and Flask. Th
 ## Project Structure
 
 ```plaintext
+📂 home-security/
+├── 📂 detected_fires/
+│   └── (Contains images of detected fires)
+├── 📂 image_attendance/
+│   └── (Contains images of authorized persons)
+├── 📂 static/
+│   └── (Contains images for the Flask website)
+├── 📂 templates/
+│   └── (Contains HTML and CSS files for the web interface)
+├── 📄 fire_alert.mp3
+├── 📄 unauthorized_alert.mp3
+├── 📄 attendance.csv
+├── 📄 detection_logs.csv
+├── 📄 fire_best.pt
+├── 📄 app.py
+├── 📄 create_voice.py
+├── 📄 face_attendance.py
+├── 📄 fire_detection.py
+└── 📄 requirements.txt
 
 ```
 
